@@ -1,0 +1,15 @@
+<div class="ToDo">
+  <img class="Logo" src="./logo.png" alt="Ember logo" >
+  <h1 class="ToDo-Header">Ember To Do</h1>
+  <div class="ToDo-Container">
+    <ul class="ToDo-Content">
+      {{#each this.list as |item|}}
+        <ToDoItem @item={{item}} @delete={{action this.onDeleteItem}} />
+      {{/each}}
+    </ul>
+    <Input type="text" @value={{this.todo}} @enter={{action this.createNewTodoItem}} />
+
+    <button class="ToDo-Add" onclick={{action this.createNewTodoItem}}>+</button>
+  </div>
+</div>
+
